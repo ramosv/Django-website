@@ -1,2 +1,2 @@
 # BACS-350
-University of Northern Colorado - BACS 200 - Intro to Web Development 
+University of Northern Colorado - BACS 350 - Web Apps with Python
