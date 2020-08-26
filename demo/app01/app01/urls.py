@@ -1,4 +1,4 @@
-"""app1 URL Configuration
+"""app01 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
 
-
 def home_page_view(request):
-    return HttpResponse("<h1>First Website of the Semester up and running!</h1>")
+    return HttpResponse("<h1>Here is the first of many websites to come in this class</h1>")
+
 
 urlpatterns = [
     path('', home_page_view),
