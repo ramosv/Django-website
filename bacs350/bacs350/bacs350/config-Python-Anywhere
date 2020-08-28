@@ -6,7 +6,7 @@
 import os
 import sys
 
-## assuming your django settings file is at '/home/ramo9147/bacs350/settings.py'
+## assuming your django settings file is at '/home/ramo9147/BACS-350/bacs350/bacs350/settings.py'
 ## and your manage.py is is at '/home/ramo9147/BACS-350/bacs350/manage.py'
 path = '/home/ramo9147/BACS-350/bacs350'
 if path not in sys.path:
