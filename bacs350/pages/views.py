@@ -9,4 +9,3 @@ class IndexPage(TemplateView):
 
 class ProfilePage(TemplateView):
     template_name='profile.html'
-
