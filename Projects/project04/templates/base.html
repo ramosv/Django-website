@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Superhero News</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <h1>BACS 350 Page</h1>
+        {% block content %}
+
+        {% block header %}
+        <h2>Template Header</h2>
+        {% endblock header %}
+    
+        {% block main %}
+        <h3>Template Main</h3>
+        {% endblock main %}
+    
+        {% block footer %}
+        <h3>Template Footer</h3>
+        {% endblock footer %}
+        
+        {% endblock content %}
+    </body>
+</html>

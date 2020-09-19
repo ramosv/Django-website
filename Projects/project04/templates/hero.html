@@ -1,0 +1,18 @@
+{% extends 'superhero_theme.html'%}
+
+ {% block main %}
+    <title>SuperHero News</title>
+
+    
+    <body>
+        <h1>SuperHero News</h1>
+       
+        <h2>Hero - {{ hero }}</h2>
+        <p>
+             These are my favorite heros,
+             Use the Navigation bar to look at all my heros!
+        </p>
+        <img src="/static/img/{{ hero }}.png" alt="{{ hero }}">
+    </body>
+</html>
+{% endblock main %}
