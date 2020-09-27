@@ -1,0 +1,30 @@
+{% extends 'superhero_theme.html'%}
+{% load static %}
+
+ {% block main %}
+    <title>SuperHero News</title>
+
+    <body>
+        <h1>SuperHero News</h1>
+        <p>
+            These are my favorite heros.
+       </p>
+       <p>Disclamer: I wasn't able to display the heros in their own page while also pulling from the database, 
+                     currently still working on this bug.
+       </p>
+
+        {% for hero in heros %}
+
+        <h2>Hero - {{hero.name}}</h2>
+        <h3>Identity - {{hero.identity}}
+        <div>
+        <img src="{{hero.image.url}}">
+        </div>
+        <hr>
+
+        {% endfor %}
+        
+
+    </body>
+</html>
+{% endblock main %}

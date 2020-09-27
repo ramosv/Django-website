@@ -1,4 +1,3 @@
-from django.test import SimpleTestCase
 from django.test import TestCase
 
 class ViewTests(SimpleTestCase):
@@ -49,6 +48,3 @@ class HeroTests(TestCase):
         x.image = 'Hulk.jpg'
         x.save()
         self.assertEqual(x.image, 'Hulk.jpg')
-        
-
-
