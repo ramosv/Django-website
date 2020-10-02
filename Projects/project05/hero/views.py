@@ -1,15 +1,17 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 from .models import Superhero
 
 
-def allheros(request):
-        heros = Superhero.objects.all()
-        contex = {'heros':heros}
-        return render(request, 'hero.html', contex)
+class HeroListView(ListView):
+    model = Superhero
+    template_name = 'hero.html'
 
-#class HeroView(TemplateView):
-    #template_name = "hero.html"
+class HeroDetailView(DetailView):
+    model = Superhero
+    template_name = 'hero_detail.html'
 
 class BasePage(TemplateView):
     template_name = "superhero_theme.html"

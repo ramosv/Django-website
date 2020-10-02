@@ -1,13 +1,15 @@
-from .views import AboutPage, BasePage, HomePage, ProfilePage, allheros
+from .views import AboutPage, BasePage, HomePage, ProfilePage, HeroDetailView, HeroListView
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', HomePage.as_view()),
+    path('hero', HeroListView.as_view(), name='hero'),
+    path('<int:pk>/', HeroDetailView.as_view(), name='hero_detail'),
     path('about', AboutPage.as_view()),
     path('home', HomePage.as_view()),
-    path('hero', views.allheros, name= "hero"),
     path('profile', ProfilePage.as_view()),
-    path('base', BasePage.as_view()),
-    #path('<str:identity>', HeroView.as_view()),
-]
+    path('', HomePage.as_view()),
+
+] 
+
+
