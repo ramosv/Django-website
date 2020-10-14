@@ -1,0 +1,16 @@
+{% extends 'superhero_theme.html'%}
+{% load static %}
+
+{% block main %}
+
+<div>
+    <h2>Name: {{ superhero.name }} </h2>
+    <h2>Identity: {{ superhero.identity }}</h2>
+    <p>{{ superhero.body }}</p>
+
+    <img src="/static/img/{{ superhero.image }}" alt="{{ hero }}">
+
+    
+</div>
+
+{% endblock main %}

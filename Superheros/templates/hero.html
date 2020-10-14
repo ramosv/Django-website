@@ -1,0 +1,39 @@
+{% extends 'superhero_theme.html'%}
+{% load static %}
+
+
+ {% block main %}
+
+</div>
+ 
+  </div>
+    <title>SuperHero List</title>
+
+    <body>
+        <h1>SuperHero List</h1>
+        <h2>
+            These are my favorite heros.
+        </h2>
+       <Strong>Click on Superhero Name to see their Identity and Picture</strong>
+        <hr>
+       {% for hero in object_list %}
+
+       <div>
+           <h3>
+               <a href="{% url 'hero_detail' hero.pk %}">{{ hero.name }}</a>
+           </h3>
+           <p>Body:</p>
+           <p>{{ hero.body }}</p>
+       </div>
+       
+       <hr>
+       
+       {% endfor %}
+
+       
+       
+
+    </body>
+
+{% endblock main %}
+
