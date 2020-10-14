@@ -15,15 +15,22 @@
             These are my favorite heros.
         </h2>
        <Strong>Click on Superhero Name to see their Identity and Picture</strong>
+        <p>Or add a new Hero!</p>
+        <a href="{% url 'hero_add' %}" class="btn btn-primary">Add Hero</a>
         <hr>
        {% for hero in object_list %}
 
-       <div>
+       <div class="card text-white bg-dark mb-3" style="width: 35rem;">
+        <div class="card-body">
            <h3>
                <a href="{% url 'hero_detail' hero.pk %}">{{ hero.name }}</a>
            </h3>
            <p>Body:</p>
            <p>{{ hero.body }}</p>
+           <a href="{% url 'hero_edit' hero.pk %}" class="btn btn-primary"> Edit</a>
+           <a href="{% url 'hero_delete' hero.pk %}" class="btn btn-primary"> Delete</a>
+           
+           </div>
        </div>
        
        <hr>

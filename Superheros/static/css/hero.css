@@ -18,3 +18,7 @@ body {
     font-weight: bold;
     background: #979ca2;
 }
+
+.card {
+    background: #979ca2!important;
+}

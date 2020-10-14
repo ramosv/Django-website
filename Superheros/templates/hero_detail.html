@@ -4,13 +4,17 @@
 {% block main %}
 
 <div>
-    <h2>Name: {{ superhero.name }} </h2>
-    <h2>Identity: {{ superhero.identity }}</h2>
-    <p>{{ superhero.body }}</p>
+    <div class="card border-dark mb-3" style="max-width: 60rem;">
+        <div class="card-body">
+            <h2>Name: {{ superhero.name }} </h2>
+            <h2>Identity: {{ superhero.identity }}</h2>
+            <p>{{ superhero.body }}</p>
 
-    <img src="/static/img/{{ superhero.image }}" alt="{{ hero }}">
+            <img width="500" src="/static/img/{{ superhero.image }}" alt="{{ hero }}">
+        </div>
+    </div>
 
-    
+
 </div>
 
 {% endblock main %}
