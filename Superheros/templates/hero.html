@@ -15,8 +15,7 @@
             These are my favorite heros.
         </h2>
         <h3>If you want to test the features please create a new hero</h3>
-       <Strong>Click on Superhero Name to see their Identity and Picture</strong>
-        <p>Or add a new Hero!</p>
+       <h3><Strong>Click on Superhero Name to see their Identity, Strength, Weakness and Picture!</strong></h3>
         <a href="{% url 'hero_add' %}" class="btn btn-primary">Add Hero</a>
         <hr>
        {% for hero in object_list %}

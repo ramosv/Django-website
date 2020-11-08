@@ -18,12 +18,12 @@ class HeroDetailView(DetailView):
 class HeroCreateView(LoginRequiredMixin, CreateView):
     model = Superhero
     template_name = 'hero_add.html'
-    fields = ['name', 'identity', 'body']
+    fields = ['name', 'identity', 'body', 'strength', 'weakness']
 
 class HeroUpdateView(LoginRequiredMixin, UpdateView):
     model = Superhero
     template_name = 'hero_edit.html'
-    fields = ['name', 'identity', 'body']
+    fields = ['name', 'identity', 'body', 'strength', 'weakness']
 
 class HeroDeleteView(LoginRequiredMixin, DeleteView): 
     model = Superhero
