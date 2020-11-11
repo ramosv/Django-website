@@ -1,9 +1,18 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
+from .workshop import accordion_data, card_data, cards_data, markdown_file_data, table_data, tabs_data
+
 
 class HomeView(TemplateView):
     template_name = 'workshop.html'
+
+    
+class CardView(TemplateView):
+    template_name = 'card.html'
+
+    def get_context_data(self, **kwargs):
+        return dict(card=card_data())
 
 
 class CardsView(TemplateView):
@@ -12,16 +21,47 @@ class CardsView(TemplateView):
     def get_context_data(self, **kwargs):
         return dict(cards=cards_data())
 
+class DocumentView(TemplateView):
+    template_name = 'markdown.html'
+
+    def get_context_data(self, **kwargs):
+        doc = kwargs.get('doc', "README.md")
+        return markdown_file_data(doc)
+
+class TableView(TemplateView):
+    template_name = 'table.html'
     
-def lorem(num_chars):
-    text = '''Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quibusdam sit hic, ipsum labore commodi eligendi quos culpa maxime voluptate. Ad, voluptatem, esse! Quam accusantium minus sequi cumque minima quod odio accusamus assumenda dolorem consequuntur esse alias nisi, explicabo error! Dolores blanditiis adipisci laboriosam quo sequi nostrum consectetur recusandae illo sed molestias laborum, ullam modi doloremque. Facilis nulla iure odit accusamus. Doloremque voluptatibus repudiandae, beatae temporibus odit suscipit eius facere dolores quibusdam perspiciatis exercitationem velit porro cupiditate repellendus et tempora dolorem, sapiente, debitis cum nihil sunt. Illo perspiciatis cumque qui quia quam quibusdam doloribus fugiat porro, soluta esse nesciunt itaque? Blanditiis, voluptate, voluptates iure iste aut maxime perferendis aliquid, odit doloribus sapiente temporibus ad mollitia consequuntur, alias totam tenetur ut. Accusantium voluptas temporibus, ea a impedit.'''
-    return text[:num_chars]
+    def get_context_data(self, **kwargs):
+        return dict(title='Random Show Episode Release Schedule', 
+                    table=table_data('Documents/seasons.csv'))
     
     
-def cards_data():
-    return [
-                dict(title="Card One", body=lorem(200), color="bg-secondary"),
-                dict(title="Card Two", body=lorem(150), color="bg-warning"),
-                dict(title="Card Three", body=lorem(50), color="bg-success"),
-                dict(title="Card Four", body=lorem(500), color="bg-primary"),
-            ]
+class TabsView(TemplateView):
+    template_name = 'tabs.html'
+    
+    def get_context_data(self, **kwargs):
+        tabs = tabs_data()
+        return dict(title='Tab View', tabs=tabs)
+
+    
+class CarouselView(TemplateView):
+    template_name = 'carousel.html'
+    
+    def get_context_data(self, **kwargs):
+        carousel = carousel_data()
+        return dict(title='Carousel View', carousel=carousel)
+    
+
+def carousel_data():
+    return [["https://source.unsplash.com/random/1200x800?technology", "active"],
+            ["https://source.unsplash.com/random/1200x800?lion", ''], 
+            ["https://source.unsplash.com/random/1200x800?plant"],
+            ["https://source.unsplash.com/random/1200x800?Light"],
+            ["https://source.unsplash.com/random/1200x800?sky"]]
+
+    
+class AccordionView(TemplateView):
+    template_name = 'accordion.html'
+    
+    def get_context_data(self, **kwargs):
+        return dict(accordion=accordion_data())
