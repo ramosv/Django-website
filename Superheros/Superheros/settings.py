@@ -123,6 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
 LOGIN_REDIRECT_URL = 'hero'
 LOGOUT_REDIRECT_URL = 'hero' 
