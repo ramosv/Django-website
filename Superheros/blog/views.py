@@ -32,7 +32,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
     model = Postblog
     template_name = 'blog_edit.html'
-    fields = ['author', 'title', 'text']
+    fields = ['title', 'text']
 
 class BlogDeleteView(LoginRequiredMixin, DeleteView): 
     model = Postblog
