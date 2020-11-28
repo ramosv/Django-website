@@ -12,13 +12,11 @@ class BlogListView(ListView):
     template_name = 'blog.html'
 
 class BlogDetailView(DetailView):
-    #model = Postblog
-    template_name = 'blog/blog_detail.html'
+    template_name = 'blog_detail.html'
 
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Postblog, id=id_)
-
 
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Postblog
@@ -37,7 +35,6 @@ class BlogUpdateView(LoginRequiredMixin, UpdateView):
 class BlogDeleteView(LoginRequiredMixin, DeleteView): 
     model = Postblog
     template_name = 'blog_delete.html'
-    #success_url = reverse_lazy('blog')
 
 class BasePage(TemplateView):
     template_name = "superhero_theme.html"

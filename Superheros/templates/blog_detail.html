@@ -4,13 +4,12 @@
 {% block main %}
 
 <div>
-    <div class="card border-dark mb-3" style="max-width: 60rem;">
+    <div style="text-align: center; width: 50rem; margin:0 auto;" class="card border-dark mb-3">
         <div class="card-body">
-            <h2>Title: {{ Postblog.title }} </h2>
-            <h2>Author: {{ Postblog.author }}</h2>
-            <p>Text: {{ Postblog.text }}</p>
-            <a href="{% url 'blog_edit' blog.id %}" class="btn btn-primary"> Edit</a>
-            <a href="{% url 'blog_delete' blog.id %}" class="btn btn-primary"> Delete</a>
+            <h2>Title: {{ object.title }} </h2>
+            <h2>Author: {{ object.author }}</h2>
+            <p> {{ object.text }}</p>
+            <li>Posted on:  {{ object.date }}</li>
 
         </div>
     </div>
