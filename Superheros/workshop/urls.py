@@ -1,12 +1,10 @@
-from django.contrib import admin
 from django.urls import path
 
-from .views import AccordionView, CardView, CardsView, CarouselView, HomeView, TableView, TabsView, DocumentView
+from .views import AccordionView, CardView, CardsView, CarouselView, HomeView, TableView, TabsView, DocumentView, SuperView
 
 
 urlpatterns = [
     
-    path('admin/', admin.site.urls),
     path('workshop/', HomeView.as_view(), name='workshop'),
 
     path('workshop/card',  CardView.as_view(), name='card'),
@@ -18,5 +16,6 @@ urlpatterns = [
 
     path('workshop/accordion',  AccordionView.as_view(), name='accordion'),
     path('workshop/carousel',  CarouselView.as_view(), name='carousel'),
+    path('workshop/superview',  SuperView.as_view(), name='superview'),
 
 ]

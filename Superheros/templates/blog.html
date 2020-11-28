@@ -1,0 +1,44 @@
+{% extends 'superhero_theme.html'%}
+{% load static %}
+
+
+ {% block main %}
+
+</div>
+ 
+  </div>
+    <title>Welcome to the News Feed</title>
+
+    <body>
+        <h1 style="text-align: center;" >Come read about your favorite Heros</h1>
+        <h3 style="text-align: center;" >Application is a work in progress...</h3>
+       <h3 style="text-align: center;" ><Strong>Create a post!</strong></h3>
+        <p style="text-align: center;" ><a href="{% url 'blog_add' %}" class="btn btn-primary">New Post</a></p>
+        <hr>
+       {% for blog in object_list %}
+
+       <div class="card text-white bg-dark mb-2" style="width: 35rem;margin:0 auto;" >
+        <div class="card-body" >
+         <!-- <a href="{% url 'blog_detail' blog.id %}"> {{ blog.title }}</a> -->
+           <h3>Title:  {{ blog.title }} </h3>
+           <p>Post:  {{ blog.text }} </p>
+           <li>Author:   {{ blog.author }}</li>
+           <li>Posted on:  {{ blog.date }}</li>
+           <hr>
+           <a href="{% url 'blog_edit' blog.id %}" class="btn btn-primary"> Edit</a>
+           <a href="{% url 'blog_delete' blog.id %}" class="btn btn-primary"> Delete</a>
+
+           
+           </div>
+       </div>
+       
+       <hr>
+       
+       {% endfor %}
+
+       
+       
+
+    </body>
+
+{% endblock main %}

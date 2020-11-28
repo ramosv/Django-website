@@ -43,14 +43,24 @@ class TabsView(TemplateView):
         tabs = tabs_data()
         return dict(title='Tab View', tabs=tabs)
 
+class SuperView(TemplateView):
+    template_name = 'superview.html'
+    
+    def get_context_data(self, **kwargs):
+        card=card_data()
+        cards=cards_data()
+        table=table_data('Documents/seasons.csv')
+        accordion = accordion=accordion_data()
+        tabs = tabs_data()
+        carousel = carousel_data()
+        return dict(title='Table View', cards=cards, table=table, tabs=tabs, accordion=accordion, carousel=carousel) 
     
 class CarouselView(TemplateView):
     template_name = 'carousel.html'
     
     def get_context_data(self, **kwargs):
         carousel = carousel_data()
-        return dict(title='Carousel View', carousel=carousel)
-    
+        return dict(title='Carousel View', carousel=carousel)    
 
 def carousel_data():
     return [["https://source.unsplash.com/random/1200x800?technology", "active"],
@@ -64,4 +74,4 @@ class AccordionView(TemplateView):
     template_name = 'accordion.html'
     
     def get_context_data(self, **kwargs):
-        return dict(accordion=accordion_data())
+        return dict(title='Accordion View', accordion=accordion_data())

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'hero',
     'accounts',
     'workshop',
+    'blog',
 ]
 
 MIDDLEWARE = [

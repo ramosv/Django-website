@@ -1,0 +1,33 @@
+{% extends 'workshop.html' %}
+
+{% block main %}
+
+
+    <h1 style="text-align: center;">The Super View</h1>
+    <div class="container">
+    <h2 style="text-align: left;">Cards View</h2>
+    <div class="row">
+
+        {% for card in cards %}
+            {% include '_card.html' %}
+        {% endfor %}
+        
+    </div>
+
+    <div>
+        {% include '_table.html' %}</div>
+
+    <div>
+        <h2 style="text-align: left;">Tabs View</h2>
+        {% include '_tabs.html' %}</div>
+
+    <div>
+        <h2 style="text-align: left;">Accordion View</h2>
+        {% include '_accordion.html' %}</div>
+
+    <div>
+        <h2 style="text-align: left;">Carousel View</h2>
+        {% include '_carousel.html' %}</div>
+    </div>
+
+{% endblock main %}
