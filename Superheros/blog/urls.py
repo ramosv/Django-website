@@ -14,5 +14,4 @@ urlpatterns = [
     path('home', HomePage.as_view()),
     path('profile', ProfilePage.as_view()),
     path('', HomePage.as_view()),
-
 ] 

@@ -47,3 +47,4 @@ class HomePage(TemplateView):
 
 class ProfilePage(TemplateView):
     template_name = 'profile.html'
+
