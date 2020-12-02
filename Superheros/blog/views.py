@@ -21,7 +21,7 @@ class BlogDetailView(DetailView):
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Postblog
     template_name = 'blog_add.html'
-    fields = ['title', 'text']
+    fields = ['title', 'text', 'hero']
 
     def form_valid(self, form):
         form.instance.author_id = self.request.user.pk
